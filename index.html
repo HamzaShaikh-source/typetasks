@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tickmark — a typed task ledger</title>
+  <meta name="description" content="Tickmark is a small task ledger driven by a TypeScript model.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="sheet">
+    <header class="masthead">
+      <h1>Tick<span>mark</span></h1>
+      <p class="tagline">A ledger for things you mean to finish.</p>
+    </header>
+
+    <form id="add-form" class="entry" autocomplete="off">
+      <label for="title" class="sr-only">New task</label>
+      <input id="title" type="text" placeholder="Write the next entry…" maxlength="120" required>
+      <button type="submit" class="btn-add">Add</button>
+    </form>
+
+    <nav class="filters" id="filters" aria-label="Filter tasks">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">All <b></b></button>
+      <button type="button" class="chip" data-filter="todo" aria-pressed="false">To do <b></b></button>
+      <button type="button" class="chip" data-filter="in-progress" aria-pressed="false">In progress <b></b></button>
+      <button type="button" class="chip" data-filter="done" aria-pressed="false">Done <b></b></button>
+    </nav>
+
+    <ul id="task-list" class="ledger" aria-live="polite"></ul>
+    <p id="empty" class="empty" hidden></p>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
